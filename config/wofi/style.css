@@ -1,0 +1,43 @@
+@define-color bright1 rgba(141,60,255,1);
+@define-color background1 rgba(15,10,30,0.7);
+@define-color font1 white;
+@define-color hover1 rgba(134,111,169,1);
+
+window {
+  border-radius:24px;
+  background: transparent; 
+}
+
+* { background-image: none; background: none; box-shadow: none; outline: none; border: none; }
+
+#outer-box {
+  background: @background1;
+  min-width: 768px; 
+  min-height: 370px;
+}
+
+#input {
+  color: @font1;
+  border-radius:12px;
+  margin: 5px;
+  border: 2px solid @bright1;
+  background-color: @background1;
+}
+
+#inner-box {
+  border-radius:20px;
+  margin: 12px;
+  margin-top: 0px;
+}
+
+#scroll {
+  border-radius:20px;
+}
+
+#entry {
+  color: @font1;
+}
+
+#entry:selected { background: @hover1; }
+
+#img { margin-right: 8px; }

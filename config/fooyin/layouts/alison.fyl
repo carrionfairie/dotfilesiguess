@@ -1,0 +1,118 @@
+{
+    "Name": "Nacho",
+    "Theme": "AAAAAQAAAAAAAAAA/////wAAAAALAAAABQAAAAAB//////////8AAAAAAAUAAAABAf//CwsLCwsLAAAAAAAFAAAABgH/////qqr//wAAAAAABQAAAAcB//8REREREREAAAAAAAUAAAAIAf//////////AAAAAAAFAAAACQH//wYGBgYGBgAAAAAABQAAAAoB//8AAAAAAAAAAAAAAAUAAAAMAf//c3MAAP//AAAAAAAFAAAADQH//////////wAAAAAABQAAABAB//8REREREREAAAAAAAUAAAAUAYCA////////AAAAAAAA",
+    "Version": 1,
+    "Widgets": [
+        {
+            "SplitterHorizontal": {
+                "State": "AAAA/wAAAAEAAAACAAACrgAABLwA/////wEAAAABAA==",
+                "Widgets": [
+                    {
+                        "SplitterHorizontal": {
+                            "State": "AAAA/wAAAAEAAAACAAAB2wAAAMcA/////wEAAAABAA==",
+                            "Widgets": [
+                                {
+                                    "SplitterVertical": {
+                                        "State": "AAAA/wAAAAEAAAACAAACEwAAAdcA/////wEAAAACAA==",
+                                        "Widgets": [
+                                            {
+                                                "SplitterVertical": {
+                                                    "State": "AAAA/wAAAAEAAAACAAAB2wAAACwA/////wEAAAACAA==",
+                                                    "Widgets": [
+                                                        {
+                                                            "ArtworkPanel": {
+                                                                "CoverAlignment": 132,
+                                                                "CoverType": 0,
+                                                                "KeepAspectRatio": true
+                                                            }
+                                                        },
+                                                        {
+                                                            "SplitterVertical": {
+                                                                "State": "AAAA/wAAAAEAAAACAAAAFQAAABcA/////wEAAAACAA==",
+                                                                "Widgets": [
+                                                                    {
+                                                                        "SeekBar": {
+                                                                            "ElapsedTotal": false,
+                                                                            "ShowLabels": true
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "SplitterHorizontal": {
+                                                                            "State": "AAAA/wAAAAEAAAACAAAAwAAAAVgA/////wEAAAABAA==",
+                                                                            "Widgets": [
+                                                                                {
+                                                                                    "VolumeControls": {
+                                                                                        "Mode": 3
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    "SplitterHorizontal": {
+                                                                                        "State": "AAAA/wAAAAEAAAACAAAAkgAAAMEA/////wEAAAABAA==",
+                                                                                        "Widgets": [
+                                                                                            {
+                                                                                                "PlayerControls": {
+                                                                                                }
+                                                                                            },
+                                                                                            {
+                                                                                                "PlaylistControls": {
+                                                                                                }
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "SplitterVertical": {
+                                                    "State": "AAAA/wAAAAEAAAACAAAARgAAACQA/////wEAAAACAA==",
+                                                    "Widgets": [
+                                                        {
+                                                            "SelectionInfo": {
+                                                                "AlternatingRows": false,
+                                                                "Options": 5,
+                                                                "ShowHeader": false,
+                                                                "ShowScrollbar": false,
+                                                                "State": "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAd8AAAACAAAAAQAAAAAAAAAAAAAAAGT/////AAAAhAAAAAAAAAACAAAAZAAAAAEAAAAAAAABewAAAAEAAAAAAAAD6AAAAABkAAAAAAAAAAAAAAAAAAAAAQ=="
+                                                            }
+                                                        },
+                                                        {
+                                                            "PeakMeter": {
+                                                                "Orientation": 1,
+                                                                "ShowLegend": false,
+                                                                "ShowPeaks": false
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "PlaylistOrganiser": {
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "Playlist": {
+                            "Columns": "8:132|1|7:2",
+                            "HeaderState": "AAAARXjaY2BgYGZgYDBjYGABYgZfBggfBBiBmAnEt19uPjOaU0vT/k2zhtyXM5X2G7w+RV1llwUpYPgPBAAJ5A7f",
+                            "ID": "c51171bd72eb425ab6bfd4e4bf670d88",
+                            "Preset": 4,
+                            "SingleMode": false
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+allow_images=true
+location=bottom
+insensitive=true
+sort_order=alphabetical
+hide_search=false
+single_click=false
+prompt=Buscar aplicación
+line_wrap=word_char
+width=40%
+height=30%
+hide_scroll=true
+normal_window=true

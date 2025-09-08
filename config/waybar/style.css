@@ -1,0 +1,84 @@
+
+@define-color bright1 rgba(141,60,255,1);
+@define-color bright2 @bright1; /*rgba(51,155,255,1);*/
+
+@define-color font1 rgba(255,255,255,1);
+@define-color font2 rgba(150,155,255,1);
+
+@define-color background1 rgba(10,5,20,0.7);
+
+@define-color hover1 rgba(134,111,169,1);
+
+@define-color highlight1 rgba(255,255,255,1);
+@define-color highlight2 rgba(255,255,255,0.4);
+
+@define-color shadow1 rgba(0,0,0,0.8);
+
+* { box-shadow: none; outline: none; border: none; background: none; background-image: none; border-radius: 0px; font-family: Jetbrains Mono; font-size: 14px; min-height: 0px; color: @font1; text-shadow: 0px 0px 2px @fontshadow1; }
+
+.modules-left, .modules-center, .modules-right { border-radius: 8px; }
+
+@keyframes tiling { /* cubic-bezier(0.6,0.4,0.3,1) */
+  0% { background:
+    linear-gradient(0deg, @bright1 0%) 0% 0% / 10% 2px,
+    linear-gradient(0deg, @bright1 0%) 0% 28px / 10% 2px,
+    linear-gradient(0deg, @bright1 0%) 100% 0% / 10% 2px,
+    linear-gradient(0deg, @bright1 0%) 100% 28px / 10% 2px,
+    linear-gradient(0deg, @bright1 0%) 50% 0% / 10% 2px,
+    linear-gradient(0deg, @bright1 0%) 50% 28px / 10% 2px,
+    linear-gradient(0deg, @background1 0%) 0% 0% / 10% 28px, 
+    linear-gradient(0deg, @background1 0%) 100% 0% / 10% 28px,
+    linear-gradient(0deg, @background1 0%) 50% 0% / 10% 28px;
+    }
+  100% { background:
+    linear-gradient(0deg, @bright1 0%) 0% 0% / 25% 2px,
+    linear-gradient(0deg, @bright1 0%) 0% 28px / 25% 2px,
+    linear-gradient(0deg, @bright1 0%) 100% 0% / 25% 2px,
+    linear-gradient(0deg, @bright1 0%) 100% 28px / 25% 2px,
+    linear-gradient(0deg, @bright1 0%) 50% 0% / 50% 2px,
+    linear-gradient(0deg, @bright1 0%) 50% 28px / 50% 2px,
+    linear-gradient(0deg, @background1 0%) 0% 0% / 25% 28px, 
+    linear-gradient(0deg, @background1 0%) 100% 0% / 25% 28px,
+    linear-gradient(0deg, @background1 0%) 50% 0% / 50% 28px;
+    }
+} 
+window#waybar { border-radius: 20px; }
+
+window#waybar.floating .modules-left, window#waybar.empty .modules-left, window#waybar.floating .modules-center, window#waybar.empty .modules-center, window#waybar.floating .modules-right, window#waybar.empty .modules-right { padding: 2px 2px; box-shadow: inset 0px 0px 0px 2000px @background1, inset 0px 0px 0px 2px @bright1, 0px 0px 8px 0px @shadow1; }
+window#waybar.floating .modules-left, window#waybar.empty .modules-left { transition: margin-left 0.3s cubic-bezier(0.4,0,0,1), margin-bottom 0.3s cubic-bezier(0.4,0,0,1); margin: 16px 16px 10px 10px; }
+window#waybar.floating .modules-center, window#waybar.empty .modules-center { transition: margin-bottom 0.3s cubic-bezier(0.4,0,0,1); margin: 16px 16px 10px 16px; }
+window#waybar.floating .modules-right, window#waybar.empty .modules-right { transition: margin-right 0.3s cubic-bezier(0.4,0,0,1), margin-bottom 0.3s cubic-bezier(0.4,0,0,1); margin: 16px 10px 10px 16px; }
+
+window#waybar:not(.floating):not(.empty) { transition: all 0s linear 0.25s; background-repeat: no-repeat;  animation: tiling 0.25s cubic-bezier(0.6,0.4,0.3,1) alternate; box-shadow: inset 0px 0px 0px 2000px @background1, inset 0px 0px 0px 2px @bright1; border-radius: 8px; }
+window#waybar:not(.floating):not(.empty) .modules-right, window#waybar:not(.floating):not(.empty) .modules-left, window#waybar:not(.floating):not(.empty) .modules-center { transition: margin-bottom 0.3s; margin-bottom: 0px; }
+
+#left { border-radius: 8px 0px 0px 8px; }
+#clocks { border-radius: 0px 8px 8px 0px; }
+window#waybar:not(.floating):not(.empty) #left { transition: none; box-shadow: inset 2px 0px 0px 0px @bright1, inset 0px 2px 0px 0px @bright1, inset 0px -2px 0px 0px @bright1; }
+window#waybar:not(.floating):not(.empty) #clocks { transition: none; box-shadow: inset -2px 0px 0px 0px @bright1, inset 0px 2px 0px 0px @bright1, inset 0px -2px 0px 0px @bright1; }
+
+tooltip, menu { background: #1f1f1f; border: solid 1px #0f0f0f; border-radius: 8px; font-family: sans-serif; }
+menuitem { border-radius: 6px; transition: background 0.1s; margin: 0px 1px; padding: 4px 4px; }
+menuitem:hover { background: @hover1; font-weight: bolder; }
+
+#network { padding: 0px 9px 0px 2px; margin: 0px 4px 0px 6px; background: no-repeat linear-gradient(0deg, @bright1 0%, @bright1 100%) right / 2px 18px; }
+
+#clocks { padding: 0px 8px 0px 3px; }
+#clock.day { margin: -7px 0px 1px 0px; font-size: 11px; color: @font2; }
+
+#workspaces { margin: 0px 6px; }
+#workspaces button { min-width: 14px; margin: 6px 1px; ; padding: 0px; border-radius: 20px; border: solid 2px @bright2; outline-style: solid; outline-color: white; outline-width: 2px; background: no-repeat radial-gradient(transparent 60%, transparent 20%) center / 0px 0px; transition: background 0.4s cubic-bezier(0.4, 0.15, 0, 1), border 0.4s cubic-bezier(0.4, 0.15, 0, 1); }
+#workspaces button * { font-size: 0px; }
+#workspaces button.active { background: no-repeat radial-gradient(@bright2 60%, transparent 20%) center / 10px 10px; }
+#workspaces button:hover { border: solid 2px @bright2; }
+#workspaces button.active:hover { background: no-repeat radial-gradient(@bright2 60%, transparent 20%) center / 10px 10px; }
+
+#tray { margin: 2px 4px 2px 0px; background: no-repeat linear-gradient(0deg, @bright1 0%, @bright1 100%) left / 2px 18px; padding-left: 6px; }
+#tray > * > * { padding: 0px 1px; margin: 2px 0px; border-radius: 4px; transition: background 0.2s cubic-bezier(0.4, 0.15, 0, 1); }
+#tray > *:hover > *:not(window) { background: @hover1; }
+
+#pulseaudio { padding: 1px 4px 1px 3px; margin: 4px; border-radius: 4px; transition: background 0.2s cubic-bezier(0.8, 0.15, 0, 1), color 0.2s cubic-bezier(0.4, 0.15, 0, 1); background: no-repeat linear-gradient(0deg, rgba(255,255,255,1) 0%) center / 0% 2px; }
+#pulseaudio.muted { color: rgba(255,255,255,0.5); background: no-repeat linear-gradient(0deg, @font1 0%) center / 90% 2px; }
+#pulseaudio:hover { background-color: @hover1; }
+
+#window { min-width: 0px; min-height: 0px; padding: 0px; margin: 0px; }

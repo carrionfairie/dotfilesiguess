@@ -1,0 +1,87 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "spacing": 0,
+    "margin": "0 2 2 2",
+    "reload_style_on_change":false,
+    "exclusive": false,
+
+    // Choose the order of the modules
+
+    "modules-left":["group/left", "tray"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right":["network", "group/clocks", "hyprland/window"],
+    // Modules configuration
+
+    "hyprland/workspaces": {
+    	"format": ""
+    },
+    "hyprland/window": {
+    	"format": "",
+    	"separate-outputs": true
+    },
+    "group/left": {
+    	"modules": ["pulseaudio"]
+    },
+
+    "network": {
+    	"interval": 1,
+    	"format": "",
+    	"tooltip-format-ethernet": "↑{bandwidthUpBits}\n↓{bandwidthDownBits}\n{ipaddr}\nEthernet",
+    	"format-ethernet": "{bandwidthTotalBits} 모",
+    	"tooltip-format-wifi": "↑{bandwidthUpBits}\n↓{bandwidthDownBits}\n{ipaddr}\n{essid}",
+    	"format-wifi": "{bandwidthTotalBits} ᯤ",
+    	"tooltip-format-disconnected": "No Connection.",
+    	"format-disconnected": "⊘",
+    	"tooltip-format-disabled": "No Connection.\nWifi is disabled.",
+    	"format-disabled": "⊘"
+    },
+    "custom/weather": {
+    	"interval": 3600,
+    	"exec": "echo", //sh ~/.config/waybar/weather.sh",
+    	"format": "{text}",
+    	"tooltip": false
+    },
+    "group/clocks": {
+    	"modules": [ "clock#hour", "clock#day" ]
+    },
+    "clock#hour": {
+      "interval":60,
+      "locale": "es_CO.UTF-8",
+      "timezone": "America/Argentina/Buenos_Aires",
+      "format": "{:L%I:%M %p}",
+      "tooltip": false
+    },
+    "clock#day": {
+      "interval":60,
+      "locale": "es_CO.UTF-8",
+      "timezone": "America/Argentina/Buenos_Aires",
+      "format": "{:L%a, %d/%m}",
+      "tooltip": false
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 20,
+	"sort-by-app-id": true,
+        "icon-theme": "Dracula",
+        "tooltip-format": "{title}",
+        "on-click": "minimize-raise",
+        "on-click-middle": "close",
+        "on-click-right": "minimize"
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 2,
+        "show-passive-items": true
+    },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_SINK@ toggle",
+    "scroll-step": 2.5,
+    "max-volume": 150
+  },
+}
