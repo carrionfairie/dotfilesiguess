@@ -8,7 +8,7 @@
 
     // Choose the order of the modules
 
-    "modules-left":["group/left", "tray"],
+    "modules-left":["group/left", "battery", "tray"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right":["network", "group/clocks", "hyprland/window"],
     // Modules configuration
@@ -23,7 +23,16 @@
     "group/left": {
     	"modules": ["pulseaudio"]
     },
-
+    "battery": {
+        "bat": "BAT0",
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
     "network": {
     	"interval": 1,
     	"format": "",
