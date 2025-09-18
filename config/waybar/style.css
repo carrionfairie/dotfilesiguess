@@ -157,16 +157,27 @@ window#waybar.floating #network {
 }
 #network {
   padding: 0px 9px 0px 2px;
-  margin: 0px 4px 0px 6px;
+  margin: 0px 0px 0px 6px;
+  background: no-repeat linear-gradient(0deg, @bright1 0%, @bright1 100%, @bright1 100%) right / 2px 18px;
+}
+
+window#waybar.empty #custom-weather,
+window#waybar.floating #custom-weather {
+  margin-left: 8px;
+  padding-right: 11px;
+}
+#custom-weather {
+  padding: 0px 9px 0px 2px;
+  margin: 0px 0px 0px 6px;
   background: no-repeat linear-gradient(0deg, @bright1 0%, @bright1 100%, @bright1 100%) right / 2px 18px;
 }
 
 window#waybar.empty #clocks,
 window#waybar.floating #clocks {
-  padding-left: 5px;
+  padding-left: 9px;
 }
 #clocks {
-  padding: 0px 8px 0px 3px;
+  padding: 0px 8px 0px 7px;
 }
 #clock.hour {
   margin-bottom: -4px;
@@ -210,6 +221,7 @@ window#waybar.floating #clocks {
 window#waybar.empty #tray,
 window#waybar.floating #tray {
   padding-left: 8px;
+  margin-left: 2px;
 }
 #tray {
   margin: 2px 4px 2px 0px;
@@ -237,10 +249,6 @@ window#waybar.floating #battery {
   background: no-repeat linear-gradient(0deg, @bright1 0%, @bright1 100%, @bright1 100%) left / 2px 18px;
 }
 
-window#waybar.empty #pulseaudio,
-window#waybar.floating #pulseaudio {
-  margin-right: 6px;
-}
 #pulseaudio {
   padding: 1px 4px 1px 3px;
   margin: 4px;

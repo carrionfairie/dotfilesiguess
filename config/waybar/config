@@ -10,7 +10,7 @@
 
     "modules-left":["group/left", "battery", "tray"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right":["network", "group/clocks", "hyprland/window"],
+    "modules-right":["network", "custom/weather", "group/clocks", "hyprland/window"],
     // Modules configuration
 
     "hyprland/workspaces": {
@@ -47,9 +47,7 @@
     },
     "custom/weather": {
     	"interval": 3600,
-    	"exec": "echo", //sh ~/.config/waybar/weather.sh",
-    	"format": "{text}",
-    	"tooltip": false
+    	"exec": "sh ~/.config/waybar/weather.sh"
     },
     "group/clocks": {
     	"modules": [ "clock#hour", "clock#day" ]
