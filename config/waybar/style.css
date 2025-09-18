@@ -240,11 +240,11 @@ window#waybar.floating #tray {
 
 window#waybar.empty #battery,
 window#waybar.floating #battery {
-  padding: 0px 2px 0px 8px;
+  padding: 0px 2px 0px 10px;
   margin-right: 6px;
 }
 #battery {
-  padding: 0px 2px 0px 6px;
+  padding: 0px 2px 0px 8px;
   margin-right: 4px;
   background: no-repeat linear-gradient(0deg, @bright1 0%, @bright1 100%, @bright1 100%) left / 2px 18px;
 }
