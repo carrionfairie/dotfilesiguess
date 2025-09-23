@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 ss="$(grim - | sed 's/\\/\\\\/g;s/%/%%/g;s/\x00/\\x00/g')"
 
 crop=$(slurp)

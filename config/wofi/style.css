@@ -4,7 +4,6 @@
 @define-color hover1 rgba(134,111,169,1);
 
 window {
-  border-radius:24px;
   background: transparent; 
 }
 
