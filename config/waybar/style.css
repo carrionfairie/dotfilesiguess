@@ -13,7 +13,7 @@
 
 @define-color fontshadow1 rgba(0,0,0,0.6);
 
-@define-color shadow1 black;
+@define-color shadow1 rgba(0,0,0,0.8);
 
 * {
   box-shadow: none;
@@ -58,39 +58,39 @@
   }
 }
 
-window#waybar {
+window#waybar.main {
   border-radius: 20px;
 }
 
-window#waybar.floating .modules-left,
-window#waybar.empty .modules-left,
-window#waybar.floating .modules-center,
-window#waybar.empty .modules-center,
-window#waybar.floating .modules-right,
-window#waybar.empty .modules-right {
+window#waybar.main.floating .modules-left,
+window#waybar.main.empty .modules-left,
+window#waybar.main.floating .modules-center,
+window#waybar.main.empty .modules-center,
+window#waybar.main.floating .modules-right,
+window#waybar.main.empty .modules-right {
   padding: 4px;
   box-shadow:
     inset 0px 0px 0px 2000px @background1,
     inset 0px 0px 0px 2px @bright1,
     0px 0px 8px 0px @shadow1;
 }
-window#waybar.floating .modules-left,
-window#waybar.empty .modules-left {
+window#waybar.main.floating .modules-left,
+window#waybar.main.empty .modules-left {
   transition:
     padding 0.1s,
     margin-left 0.3s cubic-bezier(0.4,0,0,1),
     margin-bottom 0.3s cubic-bezier(0.4,0,0,1);
   margin: 16px 16px 16px 16px;
 }
-window#waybar.floating .modules-center,
-window#waybar.empty .modules-center {
+window#waybar.main.floating .modules-center,
+window#waybar.main.empty .modules-center {
   transition:
     padding 0.1s,
     margin-bottom 0.3s cubic-bezier(0.4,0,0,1);
   margin: 16px 16px 16px 16px;
 }
-window#waybar.floating .modules-right,
-window#waybar.empty .modules-right {
+window#waybar.main.floating .modules-right,
+window#waybar.main.empty .modules-right {
   transition:
     padding 0.1s,
     margin-right 0.3s cubic-bezier(0.4,0,0,1),
@@ -98,18 +98,16 @@ window#waybar.empty .modules-right {
   margin: 16px 16px 16px 16px;
 }
 
-window#waybar:not(.floating):not(.empty) {
+window#waybar.main:not(.floating):not(.empty) {
   transition: all 0s linear 0.25s;
   background-repeat: no-repeat;
   animation: tiling 0.25s cubic-bezier(0.6,0.4,0.3,1);
-  box-shadow:
-      inset 0px 0px 0px 2000px @background1,
-      inset 0px 0px 0px 2px @bright1;
+  animation-fill-mode: forwards;
   border-radius: 8px;
 }
-window#waybar:not(.floating):not(.empty) .modules-right,
-window#waybar:not(.floating):not(.empty) .modules-left,
-window#waybar:not(.floating):not(.empty) .modules-center {
+window#waybar.main:not(.floating):not(.empty) .modules-right,
+window#waybar.main:not(.floating):not(.empty) .modules-left,
+window#waybar.main:not(.floating):not(.empty) .modules-center {
   transition: margin-bottom 0.3s;
   margin-bottom: 0px;
 }
@@ -120,14 +118,14 @@ window#waybar:not(.floating):not(.empty) .modules-center {
 #clocks {
   border-radius: 0px 8px 8px 0px;
 }
-window#waybar:not(.floating):not(.empty) #left {
+window#waybar.main:not(.floating):not(.empty) #left {
   transition: none;
   box-shadow:
     inset 2px 0px 0px 0px @bright1,
     inset 0px 2px 0px 0px @bright1,
     inset 0px -2px 0px 0px @bright1;
 }
-window#waybar:not(.floating):not(.empty) #clocks {
+window#waybar.main:not(.floating):not(.empty) #clocks {
   transition: none;
   box-shadow:
     inset -2px 0px 0px 0px @bright1,
@@ -151,8 +149,8 @@ menuitem:hover {
   font-weight: bolder;
 }
 
-window#waybar.empty #network,
-window#waybar.floating #network {
+window#waybar.main.empty #network,
+window#waybar.main.floating #network {
   padding-right: 11px;
 }
 #network {
@@ -161,8 +159,8 @@ window#waybar.floating #network {
   background: no-repeat linear-gradient(0deg, @bright1 0%, @bright1 100%, @bright1 100%) right / 2px 18px;
 }
 
-window#waybar.empty #custom-weather,
-window#waybar.floating #custom-weather {
+window#waybar.main.empty #custom-weather,
+window#waybar.main.floating #custom-weather {
   margin-left: 8px;
   padding-right: 11px;
 }
@@ -172,8 +170,8 @@ window#waybar.floating #custom-weather {
   background: no-repeat linear-gradient(0deg, @bright1 0%, @bright1 100%, @bright1 100%) right / 2px 18px;
 }
 
-window#waybar.empty #clocks,
-window#waybar.floating #clocks {
+window#waybar.main.empty #clocks,
+window#waybar.main.floating #clocks {
   padding-left: 9px;
 }
 #clocks {
@@ -218,8 +216,8 @@ window#waybar.floating #clocks {
   background: no-repeat radial-gradient(@bright2 60%, transparent 20%) center / 10px 10px;
 }
 
-window#waybar.empty #tray,
-window#waybar.floating #tray {
+window#waybar.main.empty #tray,
+window#waybar.main.floating #tray {
   padding-left: 8px;
   margin-left: 2px;
 }
@@ -238,8 +236,8 @@ window#waybar.floating #tray {
   background: @hover1;
 }
 
-window#waybar.empty #battery,
-window#waybar.floating #battery {
+window#waybar.main.empty #battery,
+window#waybar.main.floating #battery {
   padding: 0px 2px 0px 10px;
   margin-right: 6px;
 }
@@ -271,4 +269,25 @@ window#waybar.floating #battery {
   min-height: 0px;
   padding: 0px;
   margin: 0px;
+}
+
+window#waybar.watermark {
+  box-shadow: none;
+  animation: none;
+}
+
+#custom-topwm, #custom-bottomwm {
+  color: rgba(255,255,255,0.7);
+  font-family: 'Segoe UI';
+  text-shadow: 0px 0px 8px rgba(0,0,0,0.5);
+}
+
+#custom-topwm {
+  margin-top: 20px;
+  font-size: 24px;
+  margin-right: 100px;
+}
+#custom-bottomwm {
+  font-size: 18px;
+  margin-bottom: 20px;
 }

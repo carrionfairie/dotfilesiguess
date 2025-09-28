@@ -1,8 +1,10 @@
+[
 {
     "layer": "top",
     "position": "bottom",
     "spacing": 0,
-    "margin": "0 2 2 2",
+    "name": "main",
+    "margin": "0",
     "reload_style_on_change":false,
     "exclusive": false,
 
@@ -14,7 +16,9 @@
     // Modules configuration
 
     "hyprland/workspaces": {
-    	"format": ""
+    	"format": "",
+    	"on-scroll-up": "hyprctl dispatch workspace +1",
+    	"on-scroll-down": "hyprctl dispatch workspace -1"
     },
     "hyprland/window": {
     	"format": "",
@@ -36,9 +40,9 @@
     "network": {
     	"interval": 1,
     	"format": "",
-    	"tooltip-format-ethernet": "↑{bandwidthUpBits}\n↓{bandwidthDownBits}\n{ipaddr}\nEthernet",
+    	"tooltip-format-ethernet": "↑ {bandwidthUpBits}\n↓ {bandwidthDownBits}\n\n{ipaddr}\nEthernet",
     	"format-ethernet": "{bandwidthTotalBits} 모",
-    	"tooltip-format-wifi": "↑{bandwidthUpBits}\n↓{bandwidthDownBits}\n{ipaddr}\n{essid}",
+    	"tooltip-format-wifi": "↑ {bandwidthUpBits}\n↓ {bandwidthDownBits}\n\n{ipaddr}\n{essid}",
     	"format-wifi": "{bandwidthTotalBits} ᯤ",
     	"tooltip-format-disconnected": "No Connection.",
     	"format-disconnected": "⊘",
@@ -92,3 +96,33 @@
     "max-volume": 150
   },
 }
+/*,
+{
+	"layer": "top",
+	"position": "bottom",
+	"exclusive": false,
+	"name": "watermark",
+	"passthrough": true,
+	"margin": "0 80 80 0",
+	"modules-right": [
+		"group/watermark",
+		"hyprland/window"
+	],
+	"group/watermark": {
+		"modules": [
+			"custom/topwm",
+			"custom/bottomwm"
+		]
+	},
+	"custom/topwm": {
+		"format": "Activate Linux"
+	},
+	"custom/bottomwm": {
+		"format": "Go to Settings to activate Linux."
+	},
+	"hyprland/window": {
+    		"format": "",
+    		"separate-outputs": true
+        }
+}*/
+]
